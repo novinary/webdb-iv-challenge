@@ -11,3 +11,13 @@ exports.seed = function(knex, Promise) {
       ]);
     });
 };
+
+
+exports.seed = function(knex, Promise) {
+  return knex('ingRec').insert([
+    { recipe_id: 1, ingredient_id: 1 }, // 1
+    { recipe_id: 2, ingredient_id: 2 }, // 2
+    { recipe_id: 3, ingredient_id: 1 }, // 3
+    { recipe_id: 4, ingredient_id: 3 }, // 4
+  ]);
+};

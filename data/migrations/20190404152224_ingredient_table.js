@@ -1,6 +1,6 @@
 
-exports.up = function(knex, Promise) {
-    knex.schema.createTable("ingRec", table => {
+exports.up = function(knex) {
+  return knex.schema.createTable("ingRec", table => {
         table
         .integer('recipe_id')
         .unsigned()
@@ -19,6 +19,6 @@ exports.up = function(knex, Promise) {
     })
 };
 
-exports.down = function (knex, Promise) {
+exports.down = function (knex) {
     return knex.schema.dropTableIfExists("ingRec");
 };

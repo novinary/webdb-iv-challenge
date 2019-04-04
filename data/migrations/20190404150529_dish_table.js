@@ -1,13 +1,13 @@
 
-exports.up = function(knex, Promise) {
-    knex.schema.createTable("dish", table => {
-        table.increments(id);
+exports.up = function(knex) {
+   return knex.schema.createTable("dish", table => {
+        table.increments();
         table.string("name", 280).notNullable().unique();
 
-        tbl.timestamps(true, true)
+        table.timestamps(true, true)
       })  
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function(knex) {
     return knex.schema.dropTableIfExists("dish");
 };
